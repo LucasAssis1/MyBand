@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#232E33">
+    <RelativeLayout
+        android:id="@+id/rlProfileHeader"
+        android:layout_width="match_parent"
+        android:layout_height="115dp">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/ivProfilePicture" />
+        <TextView
+            android:text="Username"
+            android:textColor="#e5e5e5"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/ivProfilePicture"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvProfileUsername" />
+        <TextView
+            android:text="Email"
+            android:textColor="#e5e5e5"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/ivProfilePicture"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvProfileEmail" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/profileContainerButtons"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:weightSum="100">
+        <Button
+            android:text="Editar Perfil"
+            android:textColor="#e5e5e5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnEditProfile"
+            android:background="@drawable/ButtonsUserProfile"
+            android:layout_weight="50"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+        <Button
+            android:text="Adicinar Banda"
+            android:textColor="#e5e5e5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAddBand"
+            android:background="@drawable/ButtonsUserProfile"
+            android:layout_weight="50"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/llProfileBody"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <TextView
+            android:text="Bandas Curtidas"
+            android:textColor="#cccccc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/profileLikedBands" />
+        <RelativeLayout
+            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:id="@+id/llConteinerLikedBands">
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hsvLikedBands">
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp" />
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
