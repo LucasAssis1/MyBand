@@ -1,2 +1,0 @@
-android.app.Application
-My_Band.My_Band
