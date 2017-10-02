@@ -30,6 +30,7 @@ namespace My_Band.Activities
         Button mBtnSubmit;
         LinearLayout mLinearLayout;
         ImageView mBtnRegisterOptionalBack;
+        TextView mTvSkip;
 
         public ActivitySignUpOptional()
         {
@@ -42,13 +43,14 @@ namespace My_Band.Activities
 
             SetContentView(Resource.Layout.CadastroOpcional);
 
+            mTvSkip = FindViewById<TextView>(Resource.Id.tvSkip);
+            mTvSkip.Click += mTvSkip_Click;
+
             mBtnSubmit = FindViewById<Button>(Resource.Id.btnRegisterSubmit);
             mActvGenres = FindViewById<AutoCompleteTextView>(Resource.Id.actvGenres);
 
             mBtnRegisterOptionalBack = FindViewById<ImageView>(Resource.Id.ivRegisterOptionalBack);
             mBtnRegisterOptionalBack.Click += mBtnRegisterOptionalBack_Click;
-
-
 
             Stream seedDataStream = Assets.Open(@"WordList.txt");
             List<string> lines = new List<string>();
@@ -70,6 +72,12 @@ namespace My_Band.Activities
 
             mBtnSubmit.Click += mBtnSubmit_Click;
 
+        }
+
+        private void mTvSkip_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ActivityMainView));
+            this.StartActivity(intent);
         }
 
         private void mLinearLayout_Click(object sender, EventArgs e)

@@ -33,13 +33,19 @@ namespace My_Band
             
             mBtnNext = FindViewById<Button>(Resource.Id.btnNext);
             mBtnNext.Click += mBtnNext_Click;
-
-
+            
             mLinearLayout = FindViewById<LinearLayout>(Resource.Id.RegisterLinearLayout);
             mLinearLayout.Click += mLinearLayout_Click;
+
             mBtnRegisterBack = FindViewById<ImageView>(Resource.Id.ivRegisterBack);
             mBtnRegisterBack.Click += mBtnRegisterBack_Click;
 
+        }
+
+        private void mBtnEditProfile_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ActivityAddBand));
+            this.StartActivity(intent);
         }
 
         private void mLinearLayout_Click(object sender, EventArgs e)
@@ -50,21 +56,90 @@ namespace My_Band
 
         private void mBtnNext_Click(object sender, EventArgs e)
         {
-            UserModel user = new UserModel()
+            EditText mEtEmail = FindViewById<EditText>(Resource.Id.etEmail);
+            EditText mEtUserName = FindViewById<EditText>(Resource.Id.etUserName);
+            EditText mEtPassword = FindViewById<EditText>(Resource.Id.etPassword);
+            EditText mEtConfirmPassword = FindViewById<EditText>(Resource.Id.etConfirmPassword);
+
+            TextView mTvRequiredEmail = FindViewById<TextView>(Resource.Id.tvRequiredEmail);
+            TextView mTvRequiredUsername = FindViewById<TextView>(Resource.Id.tvRequiredUsername);
+            TextView mTvRequiredPassword = FindViewById<TextView>(Resource.Id.tvRequiredPassword);
+            TextView mTvRequiredConfirmPassword = FindViewById<TextView>(Resource.Id.tvRequiredConfirmPassword);
+            bool v = true;
+
+            if (String.IsNullOrEmpty(mEtEmail.Text))
             {
-                Email = FindViewById<EditText>(Resource.Id.etEmail).Text,
-                Name = FindViewById<EditText>(Resource.Id.etUserName).Text,
-                Password = FindViewById<EditText>(Resource.Id.etConfirmPassword).Text
-            };
+                v = false;
+                mTvRequiredEmail.Text = "Campo Obrigatório";
+                mTvRequiredEmail.SetTextColor(Android.Graphics.Color.Red);
+            }
+            else
+            {
+                mTvRequiredEmail.Text = "";
+            }
 
-            Intent intent = new Intent(this, typeof(ActivitySignUpOptional));
+
+            if (String.IsNullOrEmpty(mEtUserName.Text))
+            {
+                v = false;
+                mTvRequiredUsername.Text = "Campo Obrigatório";
+                mTvRequiredUsername.SetTextColor(Android.Graphics.Color.Red);
+            }
+            else
+            {
+                mTvRequiredUsername.Text = "";
+            }
 
 
-            intent.PutExtra("user", JsonConvert.SerializeObject(user));
-            this.StartActivity(intent);
+            if (String.IsNullOrEmpty(mEtPassword.Text))
+            {
+                v = false;
+                mTvRequiredPassword.Text = "Campo Obrigatório";
+                mTvRequiredPassword.SetTextColor(Android.Graphics.Color.Red);
+            }
+            else
+            {
+                mTvRequiredPassword.Text = "";
+            }
 
+
+            if (String.IsNullOrEmpty(mEtConfirmPassword.Text))
+            {
+                v = false;
+                mTvRequiredConfirmPassword.Text = "Campo Obrigatório";
+                mTvRequiredConfirmPassword.SetTextColor(Android.Graphics.Color.Red);
+            }
+            else
+            {
+                mTvRequiredConfirmPassword.Text = "";
+            }
+
+
+            if (mEtConfirmPassword.Text != mEtPassword.Text)
+            {
+                v = false;
+                mTvRequiredConfirmPassword.Text = "Senhas Diferentes";
+                mTvRequiredConfirmPassword.SetTextColor(Android.Graphics.Color.Red);
+                return;
+            }
+            if (v == true)
+            {
+                UserModel user = new UserModel()
+                {
+                    Email = mEtEmail.Text,
+                    Name = mEtUserName.Text,
+                    Password = mEtPassword.Text
+                };
+
+                Intent intent = new Intent(this, typeof(ActivitySignUpOptional));
+
+
+                intent.PutExtra("user", JsonConvert.SerializeObject(user));
+                this.StartActivity(intent);
+            }
+            
         }
-
+        
         private void mBtnRegisterBack_Click(object sender, EventArgs e)
         {
 
