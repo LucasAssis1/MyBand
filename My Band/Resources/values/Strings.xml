@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">My Band</string>
+  <string name="strBottomLine">Configurações</string>
+  <string name="open_drawer">Open drawer</string>
+  <string name="close_drawer">Close drawer</string>
+  <string name="app_name">MyBand</string>
+  <string name="strCall">Call</string>
+  <string name="strMessage">Message</string>
+  <string name="strData">Data</string>
+</resources>
