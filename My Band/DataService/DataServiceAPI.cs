@@ -19,6 +19,7 @@ namespace My_Band.DataService
     public class DataServiceAPI
     {
         HttpClient client = new HttpClient();
+        //string urlBase = "http://xamarinwebapi.somee.com/XamarinWebAPI/api/Home";
 
         public async Task<List<UserModel>> GetUsersAsync()
         {

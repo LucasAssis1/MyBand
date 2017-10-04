@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace My_Band
 {
-    public class IconTextCallFragment : Android.Support.V4.App.Fragment
+    public class HomeFragment : Android.Support.V4.App.Fragment
     {
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -22,7 +22,7 @@ namespace My_Band
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             // Use this to return your custom view for this Fragment 
-            View view = inflater.Inflate(Resource.Layout.IconTxtCallLayout, container, false);
+            View view = inflater.Inflate(Resource.Layout.HomeLayout, container, false);
             return view;
         }
     }
