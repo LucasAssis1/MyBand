@@ -42,12 +42,7 @@ namespace My_Band
 
         }
 
-        private void mBtnEditProfile_Click(object sender, EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(ActivityAddBand));
-            this.StartActivity(intent);
-        }
-
+        
         private void mLinearLayout_Click(object sender, EventArgs e)
         {
             InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Activity.InputMethodService);

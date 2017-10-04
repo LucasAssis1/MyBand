@@ -74,10 +74,33 @@ namespace My_Band.Activities
 
         }
 
-        private void mTvSkip_Click(object sender, EventArgs e)
+        private async void mTvSkip_Click(object sender, EventArgs e)
         {
+
+            mUser = new UserModel();
+
+            mUser = JsonConvert.DeserializeObject<UserModel>(Intent.GetStringExtra("user"));
+
+            mUser.State = mEtState.Text;
+            mUser.City = mEtCity.Text;
+            mUser.Phone = mEtPhone.Text;
+            mUser.About = mEtAbout.Text;
+
             Intent intent = new Intent(this, typeof(ActivityMainView));
-            this.StartActivity(intent);
+
+            intent.PutExtra("mUser", JsonConvert.SerializeObject(mUser));
+
+            var result = await dataService.AddUsersAsync(mUser);
+
+            if (result == true)
+            {
+                this.StartActivity(intent);
+                this.Finish();
+            }
+            else
+            {
+
+            }
         }
 
         private void mLinearLayout_Click(object sender, EventArgs e)
@@ -117,7 +140,7 @@ namespace My_Band.Activities
             }
             else
             {
-
+                
             }
 
         }

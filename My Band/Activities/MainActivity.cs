@@ -19,10 +19,8 @@ using Android.Support.V4.Widget;
 namespace My_Band
 {
     [Activity(Label = "My Band Altogether", MainLauncher = true , Icon ="@drawable/mybandicon")]
-    public class MainActivity : Activity //AppCompatActivity
+    public class MainActivity : Activity 
     {
-        //DrawerLayout drawerLayout;
-        //TabLayout tabLayout;
         private Button mBtnLogIn;
         private Button mBtnSignUp;
         protected override void OnCreate(Bundle savedInstanceState)
