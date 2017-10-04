@@ -99,13 +99,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\ActivityAddBand.cs" />
+    <Compile Include="Activities\ActivityEditProfile.cs" />
     <Compile Include="Activities\ActivityMainView.cs" />
     <Compile Include="Activities\ActivitySignUp.cs" />
     <Compile Include="Activities\ActivitySignUpOptional.cs" />
     <Compile Include="DataService\DataServiceAPI.cs" />
-    <Compile Include="IconTextCallFragment.cs" />
-    <Compile Include="IconTextDataFragment.cs" />
-    <Compile Include="IconTextMsgFragment.cs" />
+    <Compile Include="HomeFragment.cs" />
+    <Compile Include="UserProfileFragment.cs" />
+    <Compile Include="NotificationsFragment.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -124,13 +126,13 @@
     <AndroidResource Include="Resources\layout\headerdrawerlayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\IconTxtCallLayout.axml">
+    <AndroidResource Include="Resources\layout\HomeLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\IconTxtDataLayout.axml">
+    <AndroidResource Include="Resources\layout\UserProfileLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\IconTxtMsgLayout.axml">
+    <AndroidResource Include="Resources\layout\NotificationsLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Index.axml">
@@ -139,7 +141,7 @@
     <AndroidResource Include="Resources\layout\Cadastro.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\EditarBanda.axml" />
+    <AndroidResource Include="Resources\layout\AddnEditBand.axml" />
     <AndroidResource Include="Resources\layout\CadastroOpcional.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -340,6 +342,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\materialDesignBG.jpg" />
+    <AndroidResource Include="Resources\drawable\EditTextErrorStyle.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
