@@ -3383,7 +3383,7 @@ namespace My_Band
 			public const int NotificationsLayout = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int PerfilBandaNot = 2130903107;
+			public const int PerfilBanda = 2130903107;
 			
 			// aapt resource value: 0x7f030044
 			public const int RatingLayout = 2130903108;

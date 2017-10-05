@@ -142,7 +142,7 @@
     <AndroidResource Include="Resources\layout\CadastroOpcional.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\PerfilBandaNot.axml" />
+    <AndroidResource Include="Resources\layout\PerfilBanda.axml" />
     <AndroidResource Include="Resources\layout\RatingLayout.axml" />
     <AndroidResource Include="Resources\layout\HomeLayout.axml" />
     <AndroidResource Include="Resources\layout\BandProfileLayout.axml" />
