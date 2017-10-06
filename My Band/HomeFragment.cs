@@ -21,8 +21,12 @@ namespace My_Band
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            
             // Use this to return your custom view for this Fragment 
+            
             View view = inflater.Inflate(Resource.Layout.HomeLayout, container, false);
+            RatingBar mRatingBarRank2 = view.FindViewById<RatingBar>(Resource.Id.ratingBarRank2);
+            mRatingBarRank2.Rating = 5f;
             return view;
         }
     }
