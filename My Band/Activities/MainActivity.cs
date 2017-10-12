@@ -24,8 +24,10 @@ namespace My_Band
         DataServiceAPI dataService;
         private Button mBtnLogIn;
         private Button mBtnSignUp;
-        private EditText mEtEmail;
-        private EditText mEtPassword;
+        private string mEtEmail;
+        private string mEtPassword;
+        private TextView mTvErrorLogin;
+
         public MainActivity()
         {
             dataService = new DataServiceAPI();
@@ -50,18 +52,19 @@ namespace My_Band
 
         private async void mBtnLogIn_Click(object sender, EventArgs e)
         {
-            mEtEmail = FindViewById<EditText>(Resource.Id.etEmailLogin);
-            mEtPassword = FindViewById<EditText>(Resource.Id.etPasswordLogin);
-            bool result = await dataService.GetLogin(mEtEmail.Text, mEtPassword.Text);
+            mEtEmail = FindViewById<EditText>(Resource.Id.etEmailLogin).Text;
+            mEtPassword = FindViewById<EditText>(Resource.Id.etPasswordLogin).Text;
+            mTvErrorLogin = FindViewById<TextView>(Resource.Id.tvErrorLogin);
+            bool result = await dataService.GetLogin(mEtEmail, mEtPassword);
             if (result == true)
             {
+                mTvErrorLogin.Text = "";
                 Intent intent = new Intent(this, typeof(ActivityMainView));
                 this.StartActivity(intent);
                 this.Finish();
             }
-            
+            mTvErrorLogin.Text = "Email ou senha incorretos";
         }
-
     }
 }
 

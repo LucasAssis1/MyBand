@@ -89,7 +89,7 @@ namespace My_Band.DataService
         {
             try
             {
-                string urlLogin = urlBase + "?\"username\"=" + Email + "&\"password\"=" + Password;
+                string urlLogin = urlBase + "?username=" + Email + "&password=" + Password;
                 string response = await client.GetStringAsync(urlLogin);
                 if (response == "true")
                 {
