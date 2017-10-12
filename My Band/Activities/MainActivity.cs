@@ -14,15 +14,22 @@ using Android.Support.V4.View;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Support.V4.Widget;
-
+using My_Band.DataService;
 
 namespace My_Band
 {
     [Activity(Label = "My Band Altogether", MainLauncher = true , Icon ="@drawable/mybandicon")]
     public class MainActivity : Activity 
     {
+        DataServiceAPI dataService;
         private Button mBtnLogIn;
         private Button mBtnSignUp;
+        private EditText mEtEmail;
+        private EditText mEtPassword;
+        public MainActivity()
+        {
+            dataService = new DataServiceAPI();
+        }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -41,11 +48,18 @@ namespace My_Band
             this.StartActivity(intent);
         }
 
-        private void mBtnLogIn_Click(object sender, EventArgs e)
+        private async void mBtnLogIn_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(ActivityMainView));
-            this.StartActivity(intent);
-            this.Finish();
+            mEtEmail = FindViewById<EditText>(Resource.Id.etEmailLogin);
+            mEtPassword = FindViewById<EditText>(Resource.Id.etPasswordLogin);
+            bool result = await dataService.GetLogin(mEtEmail.Text, mEtPassword.Text);
+            if (result == true)
+            {
+                Intent intent = new Intent(this, typeof(ActivityMainView));
+                this.StartActivity(intent);
+                this.Finish();
+            }
+            
         }
 
     }

@@ -20,7 +20,7 @@
         android:layout_height="50dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:id="@+id/txtEmail"
+        android:id="@+id/etEmailLogin"
         android:hint="E-mail" />
     <EditText
         android:inputType="textPassword"
@@ -28,7 +28,7 @@
         android:layout_height="50dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:id="@+id/txtPassword"
+        android:id="@+id/etPasswordLogin"
         android:hint="Senha" />
     <Button
         android:text="Entrar"

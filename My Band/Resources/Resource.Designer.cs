@@ -2110,8 +2110,26 @@ namespace My_Band
 			// aapt resource value: 0x7f020056
 			public const int avd_hide_password = 2130837590;
 			
+			// aapt resource value: 0x7f02009c
+			public const int avd_hide_password_1 = 2130837660;
+			
+			// aapt resource value: 0x7f02009d
+			public const int avd_hide_password_2 = 2130837661;
+			
+			// aapt resource value: 0x7f02009e
+			public const int avd_hide_password_3 = 2130837662;
+			
 			// aapt resource value: 0x7f020057
 			public const int avd_show_password = 2130837591;
+			
+			// aapt resource value: 0x7f02009f
+			public const int avd_show_password_1 = 2130837663;
+			
+			// aapt resource value: 0x7f0200a0
+			public const int avd_show_password_2 = 2130837664;
+			
+			// aapt resource value: 0x7f0200a1
+			public const int avd_show_password_3 = 2130837665;
 			
 			// aapt resource value: 0x7f020058
 			public const int banda = 2130837592;
@@ -2549,8 +2567,14 @@ namespace My_Band
 			// aapt resource value: 0x7f0700a1
 			public const int etEmail = 2131165345;
 			
+			// aapt resource value: 0x7f0700db
+			public const int etEmailLogin = 2131165403;
+			
 			// aapt resource value: 0x7f0700a7
 			public const int etPassword = 2131165351;
+			
+			// aapt resource value: 0x7f0700dc
+			public const int etPasswordLogin = 2131165404;
 			
 			// aapt resource value: 0x7f0700b7
 			public const int etPhone = 2131165367;
@@ -3097,12 +3121,6 @@ namespace My_Band
 			
 			// aapt resource value: 0x7f07009b
 			public const int txtCadastro = 2131165339;
-			
-			// aapt resource value: 0x7f0700db
-			public const int txtEmail = 2131165403;
-			
-			// aapt resource value: 0x7f0700dc
-			public const int txtPassword = 2131165404;
 			
 			// aapt resource value: 0x7f0700da
 			public const int txtTitle = 2131165402;
