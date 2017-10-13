@@ -106,6 +106,7 @@
     <Compile Include="Activities\ActivitySignUpOptional.cs" />
     <Compile Include="DataService\DataServiceAPI.cs" />
     <Compile Include="HomeFragment.cs" />
+    <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="UserProfileFragment.cs" />
     <Compile Include="NotificationsFragment.cs" />
     <Compile Include="Activities\MainActivity.cs" />

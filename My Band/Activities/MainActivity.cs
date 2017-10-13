@@ -55,7 +55,13 @@ namespace My_Band
             mEtEmail = FindViewById<EditText>(Resource.Id.etEmailLogin).Text;
             mEtPassword = FindViewById<EditText>(Resource.Id.etPasswordLogin).Text;
             mTvErrorLogin = FindViewById<TextView>(Resource.Id.tvErrorLogin);
-            bool result = await dataService.GetLogin(mEtEmail, mEtPassword);
+
+            Models.UserLoginModel userLogin = new Models.UserLoginModel() {
+                EmailLogin = mEtEmail,
+                PasswordLogin = mEtPassword
+            };
+
+            bool result = await dataService.GetLogin(userLogin);
             if (result == true)
             {
                 mTvErrorLogin.Text = "";
