@@ -20,9 +20,9 @@ namespace My_Band
     public class ActivitySignUp : Activity
     {
 
-        Button mBtnNext;
-        ImageView mBtnRegisterBack;
-        LinearLayout mLinearLayout;
+        private Button mBtnNext;
+        private ImageView mBtnRegisterBack;
+        private LinearLayout mLinearLayout;
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -51,10 +51,10 @@ namespace My_Band
 
         private void mBtnNext_Click(object sender, EventArgs e)
         {
-            EditText mEtEmail = FindViewById<EditText>(Resource.Id.etEmail);
-            EditText mEtUserName = FindViewById<EditText>(Resource.Id.etUserName);
-            EditText mEtPassword = FindViewById<EditText>(Resource.Id.etPassword);
-            EditText mEtConfirmPassword = FindViewById<EditText>(Resource.Id.etConfirmPassword);
+            string mEtEmail = FindViewById<EditText>(Resource.Id.etEmail).Text;
+            string mEtUserName = FindViewById<EditText>(Resource.Id.etUserName).Text;
+            string mEtPassword = FindViewById<EditText>(Resource.Id.etPassword).Text;
+            string mEtConfirmPassword = FindViewById<EditText>(Resource.Id.etConfirmPassword).Text;
 
             TextView mTvRequiredEmail = FindViewById<TextView>(Resource.Id.tvRequiredEmail);
             TextView mTvRequiredUsername = FindViewById<TextView>(Resource.Id.tvRequiredUsername);
@@ -62,7 +62,7 @@ namespace My_Band
             TextView mTvRequiredConfirmPassword = FindViewById<TextView>(Resource.Id.tvRequiredConfirmPassword);
             bool v = true;
 
-            if (String.IsNullOrEmpty(mEtEmail.Text))
+            if (String.IsNullOrEmpty(mEtEmail))
             {
                 v = false;
                 mTvRequiredEmail.Text = "Campo Obrigatório";
@@ -74,7 +74,7 @@ namespace My_Band
             }
 
 
-            if (String.IsNullOrEmpty(mEtUserName.Text))
+            if (String.IsNullOrEmpty(mEtUserName))
             {
                 v = false;
                 mTvRequiredUsername.Text = "Campo Obrigatório";
@@ -86,7 +86,7 @@ namespace My_Band
             }
 
 
-            if (String.IsNullOrEmpty(mEtPassword.Text))
+            if (String.IsNullOrEmpty(mEtPassword))
             {
                 v = false;
                 mTvRequiredPassword.Text = "Campo Obrigatório";
@@ -98,7 +98,7 @@ namespace My_Band
             }
 
 
-            if (String.IsNullOrEmpty(mEtConfirmPassword.Text))
+            if (String.IsNullOrEmpty(mEtConfirmPassword))
             {
                 v = false;
                 mTvRequiredConfirmPassword.Text = "Campo Obrigatório";
@@ -110,7 +110,7 @@ namespace My_Band
             }
 
 
-            if (mEtConfirmPassword.Text != mEtPassword.Text)
+            if (mEtConfirmPassword != mEtPassword)
             {
                 v = false;
                 mTvRequiredConfirmPassword.Text = "Senhas Diferentes";
@@ -121,9 +121,9 @@ namespace My_Band
             {
                 UserModel user = new UserModel()
                 {
-                    Email = mEtEmail.Text,
-                    Name = mEtUserName.Text,
-                    Password = mEtPassword.Text
+                    Email = mEtEmail,
+                    Name = mEtUserName,
+                    Password = mEtPassword
                 };
 
                 Intent intent = new Intent(this, typeof(ActivitySignUpOptional));

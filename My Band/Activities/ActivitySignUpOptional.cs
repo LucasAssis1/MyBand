@@ -20,17 +20,17 @@ namespace My_Band.Activities
     [Activity(Label = "ActivitySignUpOptional")]
     public class ActivitySignUpOptional : Activity
     {
-        DataServiceAPI dataService;
-        UserModel mUser;
-        AutoCompleteTextView mActvGenres;
-        EditText mEtState;
-        EditText mEtCity;
-        EditText mEtPhone;
-        EditText mEtAbout;
-        Button mBtnSubmit;
-        LinearLayout mLinearLayout;
-        ImageView mBtnRegisterOptionalBack;
-        TextView mTvSkip;
+        private DataServiceAPI dataService;
+        private UserModel mUser;
+        private AutoCompleteTextView mActvGenres;
+        private string mEtState;
+        private string mEtCity;
+        private string mEtPhone;
+        private string mEtAbout;
+        private Button mBtnSubmit;
+        private LinearLayout mLinearLayout;
+        private ImageView mBtnRegisterOptionalBack;
+        private TextView mTvSkip;
 
         public ActivitySignUpOptional()
         {
@@ -81,10 +81,10 @@ namespace My_Band.Activities
 
             mUser = JsonConvert.DeserializeObject<UserModel>(Intent.GetStringExtra("user"));
 
-            mUser.State = mEtState.Text;
-            mUser.City = mEtCity.Text;
-            mUser.Phone = mEtPhone.Text;
-            mUser.About = mEtAbout.Text;
+            mUser.State = mEtState;
+            mUser.City = mEtCity;
+            mUser.Phone = mEtPhone;
+            mUser.About = mEtAbout;
 
             Intent intent = new Intent(this, typeof(ActivityMainView));
 
@@ -112,19 +112,19 @@ namespace My_Band.Activities
         private async void mBtnSubmit_Click(object sender, EventArgs e)
         {
  
-            mEtState = FindViewById<EditText>(Resource.Id.etState);
-            mEtCity = FindViewById<EditText>(Resource.Id.etCity);
-            mEtPhone = FindViewById<EditText>(Resource.Id.etPhone);
-            mEtAbout = FindViewById<EditText>(Resource.Id.etAbout);
+            mEtState = FindViewById<EditText>(Resource.Id.etState).Text;
+            mEtCity = FindViewById<EditText>(Resource.Id.etCity).Text;
+            mEtPhone = FindViewById<EditText>(Resource.Id.etPhone).Text;
+            mEtAbout = FindViewById<EditText>(Resource.Id.etAbout).Text;
 
             mUser = new UserModel();
 
             mUser = JsonConvert.DeserializeObject<UserModel>(Intent.GetStringExtra("user"));
             
-            mUser.State = mEtState.Text;
-            mUser.City = mEtCity.Text;
-            mUser.Phone = mEtPhone.Text;
-            mUser.About = mEtAbout.Text;
+            mUser.State = mEtState;
+            mUser.City = mEtCity;
+            mUser.Phone = mEtPhone;
+            mUser.About = mEtAbout;
             
 
 
