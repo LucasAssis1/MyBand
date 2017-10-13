@@ -61,7 +61,7 @@ namespace My_Band
                 PasswordLogin = mEtPassword
             };
 
-            bool result = await dataService.GetLogin(userLogin);
+            bool result = await dataService.PostLogin(userLogin);
             if (result == true)
             {
                 mTvErrorLogin.Text = "";

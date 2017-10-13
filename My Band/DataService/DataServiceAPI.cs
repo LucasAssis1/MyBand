@@ -19,7 +19,7 @@ namespace My_Band.DataService
     public class DataServiceAPI
     {
         HttpClient client = new HttpClient();
-        string _urlBase = "http://localhost:52501/api/Home";
+        string _urlBase = "http://XamarinWebAPI2.somee.com/XamarinWebAPI/api/Home";
 
         public async Task<List<UserModel>> GetUsersAsync()
         {
@@ -83,17 +83,23 @@ namespace My_Band.DataService
             var uri = new Uri(string.Format(_urlBase, user.ID));
             await client.DeleteAsync(uri);
         }
-        public async Task<Boolean> GetLogin(UserLoginModel userLogin)
+        public async Task<Boolean> PostLogin(UserLoginModel userLogin)
         {
             try
             {
                 string urlLogin = _urlBase + "/postlogin";
-                string response = await client.GetStringAsync(urlLogin);
-                if (response == "true")
-                {
+
+                var data = JsonConvert.SerializeObject(userLogin);
+                var content = new StringContent(data, Encoding.UTF8, "application/json");
+                
+                HttpResponseMessage response = await client.PostAsync(urlLogin, content);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                if(responseContent == "true")
                     return true;
-                }
-                return false;
+                else
+                    return false;
+                
             }
             catch(Exception e)
             {
