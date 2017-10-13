@@ -2627,30 +2627,6 @@ namespace My_Band
 			// aapt resource value: 0x7f07007a
 			public const int imageView1 = 2131165306;
 			
-			// aapt resource value: 0x7f0700cf
-			public const int imageView10 = 2131165391;
-			
-			// aapt resource value: 0x7f0700d1
-			public const int imageView11 = 2131165393;
-			
-			// aapt resource value: 0x7f0700d2
-			public const int imageView12 = 2131165394;
-			
-			// aapt resource value: 0x7f0700d0
-			public const int imageView13 = 2131165392;
-			
-			// aapt resource value: 0x7f0700d4
-			public const int imageView14 = 2131165396;
-			
-			// aapt resource value: 0x7f0700d5
-			public const int imageView15 = 2131165397;
-			
-			// aapt resource value: 0x7f0700d6
-			public const int imageView16 = 2131165398;
-			
-			// aapt resource value: 0x7f0700d7
-			public const int imageView17 = 2131165399;
-			
 			// aapt resource value: 0x7f07008b
 			public const int imageView2 = 2131165323;
 			
@@ -2665,15 +2641,6 @@ namespace My_Band
 			
 			// aapt resource value: 0x7f070078
 			public const int imageView6 = 2131165304;
-			
-			// aapt resource value: 0x7f0700cd
-			public const int imageView7 = 2131165389;
-			
-			// aapt resource value: 0x7f0700ce
-			public const int imageView8 = 2131165390;
-			
-			// aapt resource value: 0x7f0700d3
-			public const int imageView9 = 2131165395;
 			
 			// aapt resource value: 0x7f0700f1
 			public const int info = 2131165425;
@@ -2749,6 +2716,9 @@ namespace My_Band
 			
 			// aapt resource value: 0x7f070048
 			public const int list_item = 2131165256;
+			
+			// aapt resource value: 0x7f0700cd
+			public const int llBandsRank = 2131165389;
 			
 			// aapt resource value: 0x7f0700d8
 			public const int llConteinerLikedBands = 2131165400;
@@ -2839,6 +2809,21 @@ namespace My_Band
 			
 			// aapt resource value: 0x7f0700fb
 			public const int ratingBar1 = 2131165435;
+			
+			// aapt resource value: 0x7f0700cf
+			public const int rbRank1 = 2131165391;
+			
+			// aapt resource value: 0x7f0700d1
+			public const int rbRank2 = 2131165393;
+			
+			// aapt resource value: 0x7f0700d3
+			public const int rbRank3 = 2131165395;
+			
+			// aapt resource value: 0x7f0700d5
+			public const int rbRank4 = 2131165397;
+			
+			// aapt resource value: 0x7f0700d7
+			public const int rbRank5 = 2131165399;
 			
 			// aapt resource value: 0x7f070035
 			public const int right = 2131165237;
@@ -3097,6 +3082,21 @@ namespace My_Band
 			
 			// aapt resource value: 0x7f0700fe
 			public const int tvProfileUsername = 2131165438;
+			
+			// aapt resource value: 0x7f0700ce
+			public const int tvRank1 = 2131165390;
+			
+			// aapt resource value: 0x7f0700d0
+			public const int tvRank2 = 2131165392;
+			
+			// aapt resource value: 0x7f0700d2
+			public const int tvRank3 = 2131165394;
+			
+			// aapt resource value: 0x7f0700d4
+			public const int tvRank4 = 2131165396;
+			
+			// aapt resource value: 0x7f0700d6
+			public const int tvRank5 = 2131165398;
 			
 			// aapt resource value: 0x7f0700a9
 			public const int tvRequiredConfirmPassword = 2131165353;

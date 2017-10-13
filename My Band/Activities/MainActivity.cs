@@ -63,7 +63,8 @@ namespace My_Band
                 this.StartActivity(intent);
                 this.Finish();
             }
-            mTvErrorLogin.Text = "Email ou senha incorretos";
+            else
+                mTvErrorLogin.Text = "Email ou senha incorretos";
         }
     }
 }
