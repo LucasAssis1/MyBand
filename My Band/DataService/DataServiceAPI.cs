@@ -19,12 +19,13 @@ namespace My_Band.DataService
     public class DataServiceAPI
     {
         HttpClient client = new HttpClient();
-        string _urlBase = "http://XamarinWebAPI2.somee.com/XamarinWebAPI/api/Home";
+        const string _urlBase = "http://XamarinWebAPI2.somee.com/XamarinWebAPI/api/";
 
         public async Task<List<UserModel>> GetUsersAsync()
         {
             try
             {
+                string list = _urlBase + "home/list/";
                 var response = await client.GetStringAsync(_urlBase);
                 var users = JsonConvert.DeserializeObject<List<UserModel>>(response);
                 return users;
@@ -41,7 +42,7 @@ namespace My_Band.DataService
                 var data = JsonConvert.SerializeObject(user);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
 
-                string urlAddUser = _urlBase + "/post";
+                string urlAddUser = _urlBase + "home/post";
 
                 HttpResponseMessage response = null;
 
@@ -65,13 +66,14 @@ namespace My_Band.DataService
 
         public async Task UpdateUser(UserModel user)
         {
-            var uri = new Uri(string.Format(_urlBase, user.ID));
+            string update = _urlBase + "home/Put";
+            var uri = new Uri(string.Format(update, user.ID));
 
             var data = JsonConvert.SerializeObject(user);
             var content = new StringContent(data, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = null;
-            response = await client.PutAsync(_urlBase, content);
+            response = await client.PutAsync(update, content);
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception("Erro ao atualizar o usuário!");
@@ -80,14 +82,15 @@ namespace My_Band.DataService
 
         public async Task DeleteUser(UserModel user)
         {
-            var uri = new Uri(string.Format(_urlBase, user.ID));
+            string delete = _urlBase + "home/DeleteGet";
+            var uri = new Uri(string.Format(delete, user.ID));
             await client.DeleteAsync(uri);
         }
         public async Task<Boolean> PostLogin(UserLoginModel userLogin)
         {
             try
             {
-                string urlLogin = _urlBase + "/postlogin";
+                string urlLogin = _urlBase + "/token";
 
                 var data = JsonConvert.SerializeObject(userLogin);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
