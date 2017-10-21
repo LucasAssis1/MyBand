@@ -57,8 +57,8 @@ namespace My_Band
             mTvErrorLogin = FindViewById<TextView>(Resource.Id.tvErrorLogin);
 
             Models.UserLoginModel userLogin = new Models.UserLoginModel() {
-                EmailLogin = mEtEmail,
-                PasswordLogin = mEtPassword
+                username = mEtEmail,
+                password = mEtPassword
             };
 
             bool result = await dataService.PostLogin(userLogin);

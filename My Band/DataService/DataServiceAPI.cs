@@ -52,7 +52,7 @@ namespace My_Band.DataService
                 {
                     throw new Exception("Erro ao incluir o usuário");
                 }
-
+                
                 else
                 {
                     return true;
@@ -102,7 +102,6 @@ namespace My_Band.DataService
                     return true;
                 else
                     return false;
-                
             }
             catch(Exception e)
             {
