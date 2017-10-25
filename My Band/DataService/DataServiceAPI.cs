@@ -13,6 +13,7 @@ using System.Net.Http;
 using My_Band.Models;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace My_Band.DataService
 {
@@ -86,22 +87,36 @@ namespace My_Band.DataService
             var uri = new Uri(string.Format(delete, user.ID));
             await client.DeleteAsync(uri);
         }
-        public async Task<Boolean> PostLogin(UserLoginModel userLogin)
+        public async Task<TokenModel> PostLogin(UserLoginModel userLogin)
         {
             try
             {
                 string urlLogin = _urlBase + "token";
 
-                var data = JsonConvert.SerializeObject(userLogin);
-                var content = new StringContent(data, Encoding.UTF8, "application/json");
-                
-                HttpResponseMessage response = await client.PostAsync(urlLogin, content);
-                var responseContent = await response.Content.ReadAsStringAsync();
+                var user = new List<KeyValuePair<string, string>>();
+                user.Add(new KeyValuePair<string, string>("grant_type", "password"));
+                user.Add(new KeyValuePair<string, string>("username", userLogin.username));
+                user.Add(new KeyValuePair<string, string>("password", userLogin.password));
+                user.Add(new KeyValuePair<string, string>("client_id", userLogin.username));
+                user.Add(new KeyValuePair<string, string>("client_password", userLogin.password));
 
-                if(responseContent == "true")
-                    return true;
-                else
-                    return false;
+                //userLogin.grant_type = "password";
+                //var data = JsonConvert.SerializeObject(userLogin);
+                //var content = new StringContent(data, Encoding.UTF8, "application/x-www-form-urlencoded");
+                //var content = new FormUrlEncodedContent(data);
+                var request = new HttpRequestMessage(HttpMethod.Post, urlLogin) {Content = new FormUrlEncodedContent(user) };
+
+                HttpResponseMessage response = await client.SendAsync(request);
+                var responseContent = await response.Content.ReadAsStringAsync();
+                TokenModel token = JsonConvert.DeserializeObject<TokenModel>(responseContent);
+                
+                return token;
+                
+
+                //if(responseContent == "true")
+                //    return true;
+                //else
+                //    return false;
             }
             catch(Exception e)
             {
