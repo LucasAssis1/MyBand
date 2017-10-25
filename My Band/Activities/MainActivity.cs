@@ -16,6 +16,7 @@ using Android.Support.V7.Widget;
 using Android.Support.V4.Widget;
 using My_Band.DataService;
 using My_Band.Models;
+using Newtonsoft.Json;
 
 namespace My_Band
 {
@@ -70,6 +71,7 @@ namespace My_Band
                 {
                     mTvErrorLogin.Text = "";
                     Intent intent = new Intent(this, typeof(ActivityMainView));
+                    intent.PutExtra("token", JsonConvert.SerializeObject(token));
                     this.StartActivity(intent);
                     this.Finish();
                 }

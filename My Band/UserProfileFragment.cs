@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using My_Band.Models;
 
 namespace My_Band
 {
@@ -22,6 +23,13 @@ namespace My_Band
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            TokenModel token = new TokenModel
+            {
+                Access_Token = Arguments.GetString("Access_Token"),
+                Refresh_Token = Arguments.GetString("Refresh_Token"),
+                Expires_In = Arguments.GetString("Expires_In"),
+                Token_Type = Arguments.GetString("Token_Type")
+            };
             // Use this to return your custom view for this Fragment 
             View view = inflater.Inflate(Resource.Layout.UserProfileLayout, container, false);
             Button mBtnEditProfile = view.FindViewById<Button>(Resource.Id.btnAddBand);

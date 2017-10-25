@@ -100,10 +100,6 @@ namespace My_Band.DataService
                 user.Add(new KeyValuePair<string, string>("client_id", userLogin.username));
                 user.Add(new KeyValuePair<string, string>("client_password", userLogin.password));
 
-                //userLogin.grant_type = "password";
-                //var data = JsonConvert.SerializeObject(userLogin);
-                //var content = new StringContent(data, Encoding.UTF8, "application/x-www-form-urlencoded");
-                //var content = new FormUrlEncodedContent(data);
                 var request = new HttpRequestMessage(HttpMethod.Post, urlLogin) {Content = new FormUrlEncodedContent(user) };
 
                 HttpResponseMessage response = await client.SendAsync(request);
@@ -111,12 +107,6 @@ namespace My_Band.DataService
                 TokenModel token = JsonConvert.DeserializeObject<TokenModel>(responseContent);
                 
                 return token;
-                
-
-                //if(responseContent == "true")
-                //    return true;
-                //else
-                //    return false;
             }
             catch(Exception e)
             {
