@@ -111,6 +111,7 @@ namespace My_Band
 
             // Give the TabLayout the ViewPager 
             tabLayout.SetupWithViewPager(viewPager);
+            
             //tabLayout.SetTabTextColors(
             FnSetIcons();
             //FnSetupTabIconsWithText ();

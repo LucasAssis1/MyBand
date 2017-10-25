@@ -18,7 +18,6 @@ namespace My_Band
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -26,7 +25,8 @@ namespace My_Band
             // Use this to return your custom view for this Fragment 
             View view = inflater.Inflate(Resource.Layout.UserProfileLayout, container, false);
             Button mBtnEditProfile = view.FindViewById<Button>(Resource.Id.btnAddBand);
-
+            TextView tvUsername = view.FindViewById<TextView>(Resource.Id.tvProfileUsername);
+            TextView tvEmail = view.FindViewById<TextView>(Resource.Id.tvProfileEmail);
             mBtnEditProfile.Click += mBtnEditProfile_Click;
 
             return view;
