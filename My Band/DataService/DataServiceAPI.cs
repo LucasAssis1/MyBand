@@ -90,7 +90,7 @@ namespace My_Band.DataService
         {
             try
             {
-                string urlLogin = _urlBase + "/token";
+                string urlLogin = _urlBase + "token";
 
                 var data = JsonConvert.SerializeObject(userLogin);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
