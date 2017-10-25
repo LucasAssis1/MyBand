@@ -15,6 +15,7 @@ using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Support.V4.Widget;
 using My_Band.DataService;
+using My_Band.Models;
 
 namespace My_Band
 {
@@ -56,21 +57,27 @@ namespace My_Band
             mEtPassword = FindViewById<EditText>(Resource.Id.etPasswordLogin).Text;
             mTvErrorLogin = FindViewById<TextView>(Resource.Id.tvErrorLogin);
 
-            Models.UserLoginModel userLogin = new Models.UserLoginModel() {
-                username = mEtEmail,
-                password = mEtPassword
-            };
-
-            bool result = await dataService.PostLogin(userLogin);
-            if (result == true)
+            if (!string.IsNullOrEmpty(mEtEmail) || !string.IsNullOrEmpty(mEtPassword))
             {
-                mTvErrorLogin.Text = "";
-                Intent intent = new Intent(this, typeof(ActivityMainView));
-                this.StartActivity(intent);
-                this.Finish();
+                UserLoginModel userLogin = new UserLoginModel() {
+                    username = mEtEmail,
+                    password = mEtPassword
+                };
+
+                TokenModel token = await dataService.PostLogin(userLogin);
+                //bool result = true;
+                if (token.Expires_In != null)
+                {
+                    mTvErrorLogin.Text = "";
+                    Intent intent = new Intent(this, typeof(ActivityMainView));
+                    this.StartActivity(intent);
+                    this.Finish();
+                }
+                else
+                    mTvErrorLogin.Text = "Email ou senha incorretos";
             }
             else
-                mTvErrorLogin.Text = "Email ou senha incorretos";
+                mTvErrorLogin.Text = "Preencha os dois campos";
         }
     }
 }
