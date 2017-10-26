@@ -14,6 +14,7 @@ using My_Band.Models;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using System.Net.Http.Headers;
 
 namespace My_Band.DataService
 {
@@ -27,7 +28,7 @@ namespace My_Band.DataService
             try
             {
                 string list = _urlBase + "home/list/";
-                var response = await client.GetStringAsync(_urlBase);
+                var response = await client.GetStringAsync(list);
                 var users = JsonConvert.DeserializeObject<List<UserModel>>(response);
                 return users;
             }
@@ -103,10 +104,30 @@ namespace My_Band.DataService
                 var request = new HttpRequestMessage(HttpMethod.Post, urlLogin) {Content = new FormUrlEncodedContent(user) };
 
                 HttpResponseMessage response = await client.SendAsync(request);
-                var responseContent = await response.Content.ReadAsStringAsync();
-                TokenModel token = JsonConvert.DeserializeObject<TokenModel>(responseContent);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    TokenModel token = JsonConvert.DeserializeObject<TokenModel>(responseContent);
                 
-                return token;
+                    return token;
+                }
+                return null;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public async Task<UserModel> FindByName(string name, TokenModel token)
+        {
+            try
+            {
+                string urlFind = _urlBase + "home/findbyname?name=" + name;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token.Token_Type, token.Access_Token);
+                HttpResponseMessage response = await client.GetAsync(urlFind);
+                var responseContent = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<UserModel>(responseContent);
             }
             catch(Exception e)
             {

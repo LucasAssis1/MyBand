@@ -64,7 +64,7 @@ namespace My_Band
                     username = mEtEmail,
                     password = mEtPassword
                 };
-
+                
                 TokenModel token = await dataService.PostLogin(userLogin);
                 //bool result = true;
                 if (token.Expires_In != null)
@@ -72,8 +72,13 @@ namespace My_Band
                     mTvErrorLogin.Text = "";
                     Intent intent = new Intent(this, typeof(ActivityMainView));
                     intent.PutExtra("token", JsonConvert.SerializeObject(token));
-                    this.StartActivity(intent);
-                    this.Finish();
+                    var user = await dataService.FindByName(userLogin.username, token);
+                    if(user != null)
+                    {
+                        intent.PutExtra("user", JsonConvert.SerializeObject(user));
+                        this.StartActivity(intent);
+                        this.Finish();
+                    }
                 }
                 else
                     mTvErrorLogin.Text = "Email ou senha incorretos";
