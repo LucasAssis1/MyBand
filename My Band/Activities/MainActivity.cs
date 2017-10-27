@@ -65,9 +65,9 @@ namespace My_Band
                     password = mEtPassword
                 };
                 
-                TokenModel token = await dataService.PostLogin(userLogin);
+                var token = await dataService.PostLogin(userLogin);
                 //bool result = true;
-                if (token.Expires_In != null)
+                if (token != null)
                 {
                     mTvErrorLogin.Text = "";
                     Intent intent = new Intent(this, typeof(ActivityMainView));

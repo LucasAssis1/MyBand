@@ -24,15 +24,9 @@ namespace My_Band
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var token = new TokenModel
-            {
-                Access_Token = Arguments.GetString("Access_Token"),
-                Refresh_Token = Arguments.GetString("Refresh_Token"),
-                Expires_In = Arguments.GetString("Expires_In"),
-                Token_Type = Arguments.GetString("Token_Type")
-            };
-
+            var token = JsonConvert.DeserializeObject<TokenModel>(Arguments.GetString("Token"));
             var user = JsonConvert.DeserializeObject<UserModel>(Arguments.GetString("user"));
+
             // Use this to return your custom view for this Fragment 
             View view = inflater.Inflate(Resource.Layout.UserProfileLayout, container, false);
             Button mBtnEditProfile = view.FindViewById<Button>(Resource.Id.btnAddBand);

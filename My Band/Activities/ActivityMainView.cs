@@ -105,10 +105,11 @@ namespace My_Band
                 new UserProfileFragment(),
             };
             Bundle args = new Bundle();
-            args.PutString("Token_Type", token.Token_Type);
-            args.PutString("Refresh_Token", token.Refresh_Token);
-            args.PutString("Access_Token", token.Access_Token);
-            args.PutString("Expires_In", token.Expires_In);
+            args.PutString("Token", JsonConvert.SerializeObject(token));
+            //args.PutString("Token_Type", token.Token_Type);
+            //args.PutString("Refresh_Token", token.Refresh_Token);
+            //args.PutString("Access_Token", token.Access_Token);
+            //args.PutString("Expires_In", token.Expires_In);
             args.PutString("user", JsonConvert.SerializeObject(user));
             //passing token to all the fragments
             int c = fragments.Count();
