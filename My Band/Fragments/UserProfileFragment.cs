@@ -29,7 +29,8 @@ namespace My_Band
 
             // Use this to return your custom view for this Fragment 
             View view = inflater.Inflate(Resource.Layout.UserProfileLayout, container, false);
-            Button mBtnEditProfile = view.FindViewById<Button>(Resource.Id.btnAddBand);
+            Button mBtnEditProfile = view.FindViewById<Button>(Resource.Id.btnEditProfile);
+            Button mBtnAddBand = view.FindViewById<Button>(Resource.Id.btnAddBand);
             TextView tvUsername = view.FindViewById<TextView>(Resource.Id.tvProfileUsername);
             TextView tvEmail = view.FindViewById<TextView>(Resource.Id.tvProfileEmail);
 
@@ -37,13 +38,19 @@ namespace My_Band
             tvUsername.Text = user.Name;
 
             mBtnEditProfile.Click += mBtnEditProfile_Click;
-
+            mBtnAddBand.Click += MBtnAddBand_Click;
             return view;
+        }
+
+        private void MBtnAddBand_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this.Activity, typeof(Activities.ActivityAddBand));
+            this.StartActivity(intent);
         }
 
         private void mBtnEditProfile_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this.Activity, typeof(Activities.ActivityAddBand));
+            Intent intent = new Intent(this.Activity, typeof(Activities.ActivityEditProfile));
             this.StartActivity(intent);
 
         }

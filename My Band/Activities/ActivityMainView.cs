@@ -58,15 +58,6 @@ namespace My_Band
             drawerToggle.SyncState();
 
             FnInitTabLayout(token, user);
-            //Load default screen
-            /*var ft = SupportFragmentManager.BeginTransaction();
-            ft.AddToBackStack(null);
-            ft.Add(Resource.Id.FrameLayout, new IconTextCallFragment());
-            ft.Commit();*/
-
-            //Trata os eventos dos cliques editar perfil
-            /*mBtnAddBand = FindViewById<Button>(Resource.Id.btnAddBand);
-            mBtnAddBand.Click += mBtnEditProfile_Click;*/
 
         }
         //click do botão inserir banda
@@ -106,11 +97,8 @@ namespace My_Band
             };
             Bundle args = new Bundle();
             args.PutString("Token", JsonConvert.SerializeObject(token));
-            //args.PutString("Token_Type", token.Token_Type);
-            //args.PutString("Refresh_Token", token.Refresh_Token);
-            //args.PutString("Access_Token", token.Access_Token);
-            //args.PutString("Expires_In", token.Expires_In);
             args.PutString("user", JsonConvert.SerializeObject(user));
+
             //passing token to all the fragments
             int c = fragments.Count();
             for(int i = 0; i < c; i++)

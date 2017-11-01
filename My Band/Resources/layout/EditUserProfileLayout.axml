@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0c0414">
+    <include
+        layout="@layout/app_bar" />
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/svVerticalUserProfile">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/llUserProfileForScrollView">
+            <RelativeLayout
+                android:id="@+id/rlProfileHeader"
+                android:layout_width="match_parent"
+                android:layout_height="115dp">
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/ivProfilePicture" />
+                <EditText
+                    android:text="Username"
+                    android:textColor="#e5e5e5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toRightOf="@id/ivProfilePicture"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvProfileUsername" />
+                <TextView
+                    android:text="Email"
+                    android:textColor="#e5e5e5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toRightOf="@id/ivProfilePicture"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvProfileEmail" />
+            </RelativeLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/profileContainerButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:weightSum="100" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/llProfileBody"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+                <EditText
+                    android:inputType="textPersonName"
+                    android:text="Estado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etState"
+                    android:textColor="#e5e5e5" />
+                <EditText
+                    android:inputType="textPersonName"
+                    android:text="Cidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etCity"
+                    android:textColor="#e5e5e5" />
+                <EditText
+                    android:inputType="phone"
+                    android:text="Telefone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etPhone"
+                    android:textColor="#e5e5e5" />
+                <EditText
+                    android:inputType="text"
+                    android:text="Sobre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etAbout"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
