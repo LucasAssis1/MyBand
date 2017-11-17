@@ -2432,11 +2432,11 @@ namespace My_Band
 			// aapt resource value: 0x7f070028
 			public const int bottom = 2131165224;
 			
-			// aapt resource value: 0x7f070106
-			public const int btnAddBand = 2131165446;
+			// aapt resource value: 0x7f070109
+			public const int btnAddBand = 2131165449;
 			
-			// aapt resource value: 0x7f070105
-			public const int btnEditProfile = 2131165445;
+			// aapt resource value: 0x7f070108
+			public const int btnEditProfile = 2131165448;
 			
 			// aapt resource value: 0x7f0700e6
 			public const int btnLogIn = 2131165414;
@@ -2633,6 +2633,9 @@ namespace My_Band
 			// aapt resource value: 0x7f070078
 			public const int imageView6 = 2131165304;
 			
+			// aapt resource value: 0x7f070103
+			public const int imageViewNotification = 2131165443;
+			
 			// aapt resource value: 0x7f0700f9
 			public const int info = 2131165433;
 			
@@ -2723,14 +2726,14 @@ namespace My_Band
 			// aapt resource value: 0x7f0700d3
 			public const int llProfileBody = 2131165395;
 			
-			// aapt resource value: 0x7f070104
-			public const int llUserProfileBody = 2131165444;
+			// aapt resource value: 0x7f070107
+			public const int llUserProfileBody = 2131165447;
 			
 			// aapt resource value: 0x7f0700cd
 			public const int llUserProfileForScrollView = 2131165389;
 			
-			// aapt resource value: 0x7f070109
-			public const int masked = 2131165449;
+			// aapt resource value: 0x7f07010c
+			public const int masked = 2131165452;
 			
 			// aapt resource value: 0x7f0700f2
 			public const int media_actions = 2131165426;
@@ -2744,17 +2747,17 @@ namespace My_Band
 			// aapt resource value: 0x7f070019
 			public const int multiply = 2131165209;
 			
+			// aapt resource value: 0x7f070110
+			public const int nav_SearchApartment = 2131165456;
+			
+			// aapt resource value: 0x7f07010f
+			public const int nav_friends = 2131165455;
+			
 			// aapt resource value: 0x7f07010d
-			public const int nav_SearchApartment = 2131165453;
+			public const int nav_home = 2131165453;
 			
-			// aapt resource value: 0x7f07010c
-			public const int nav_friends = 2131165452;
-			
-			// aapt resource value: 0x7f07010a
-			public const int nav_home = 2131165450;
-			
-			// aapt resource value: 0x7f07010b
-			public const int nav_messages = 2131165451;
+			// aapt resource value: 0x7f07010e
+			public const int nav_messages = 2131165454;
 			
 			// aapt resource value: 0x7f0700eb
 			public const int nav_view = 2131165419;
@@ -2792,8 +2795,8 @@ namespace My_Band
 			// aapt resource value: 0x7f0700d2
 			public const int profileContainerButtons = 2131165394;
 			
-			// aapt resource value: 0x7f070107
-			public const int profileLikedBands = 2131165447;
+			// aapt resource value: 0x7f07010a
+			public const int profileLikedBands = 2131165450;
 			
 			// aapt resource value: 0x7f070006
 			public const int progress_circular = 2131165190;
@@ -2804,8 +2807,8 @@ namespace My_Band
 			// aapt resource value: 0x7f07005d
 			public const int radio = 2131165277;
 			
-			// aapt resource value: 0x7f070103
-			public const int ratingBar1 = 2131165443;
+			// aapt resource value: 0x7f070106
+			public const int ratingBar1 = 2131165446;
 			
 			// aapt resource value: 0x7f0700d7
 			public const int rbRank1 = 2131165399;
@@ -2821,6 +2824,9 @@ namespace My_Band
 			
 			// aapt resource value: 0x7f0700df
 			public const int rbRank5 = 2131165407;
+			
+			// aapt resource value: 0x7f070104
+			public const int relativeLayoutNotification = 2131165444;
 			
 			// aapt resource value: 0x7f070035
 			public const int right = 2131165237;
@@ -3017,6 +3023,9 @@ namespace My_Band
 			// aapt resource value: 0x7f070091
 			public const int textView9 = 2131165329;
 			
+			// aapt resource value: 0x7f070105
+			public const int textViewNotificationDescription = 2131165445;
+			
 			// aapt resource value: 0x7f0700cb
 			public const int text_input_password_toggle = 2131165387;
 			
@@ -3137,8 +3146,8 @@ namespace My_Band
 			// aapt resource value: 0x7f0700bd
 			public const int viewpagerIcon = 2131165373;
 			
-			// aapt resource value: 0x7f070108
-			public const int visible = 2131165448;
+			// aapt resource value: 0x7f07010b
+			public const int visible = 2131165451;
 			
 			// aapt resource value: 0x7f070027
 			public const int withText = 2131165223;
