@@ -49,7 +49,8 @@
             android:id="@+id/svForm2"
             android:layout_marginTop="40dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+            android:layout_marginRight="40dp"
+            android:scrollbars="none">
             <LinearLayout
                 android:orientation="vertical"
                 android:id="@+id/llForm2"

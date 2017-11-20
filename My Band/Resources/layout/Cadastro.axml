@@ -39,7 +39,8 @@
             android:id="@+id/svForm2"
             android:layout_marginTop="40dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+            android:layout_marginRight="40dp"
+            android:scrollbars="none">
             <RelativeLayout
                 android:id="@+id/rlForm2"
                 android:layout_width="match_parent"
